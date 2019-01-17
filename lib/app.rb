@@ -18,6 +18,20 @@ client = Twitter::REST::Client.new do |config|
   config.access_token        = ENV["TWITTER_ACCESS_TOKEN"]
   config.access_token_secret = ENV["TWITTER_ACCESS_TOKEN_SECRET"]
 end
+#test de connexion
+
+def login_twitter
+  client = Twitter::REST::Client.new do |config|
+  config.consumer_key        = ENV["TWITTER_CONSUMER_KEY"]
+  config.consumer_secret     = ENV["TWITTER_CONSUMER_SECRET"]
+  config.access_token        = ENV["TWITTER_ACCESS_TOKEN"]
+  config.access_token_secret = ENV["TWITTER_ACCESS_TOKEN_SECRET"]
+ end
+end
 
 # ligne qui permet de tweeter sur ton compte
 client.update('Mon premier tweet en Ruby !!!!')
+client.follow('HeryMirindra')
+client.followers("HeryMirindra")
+client.friends("gem")
+#HeryMirindra.location
